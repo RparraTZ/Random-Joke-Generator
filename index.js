@@ -1,23 +1,21 @@
 function fetchingJoke(response) {
-  //let jokeSetUp = response.data.setup;
-  // let jokeDelivery = response.data.delivery;
-  // let fullJoke = `${jokeSetUp} ${jokeDelivery} `;
-
+  let deliveryString = response.data.delivery;
+  console.log(deliveryString);
   new Typewriter("#joke", {
     strings: response.data.setup,
     autoStart: true,
     cursor: null,
   });
-
+  deliveryButton.style.visibility = "visible";
+  deliveryButton.addEventListener("click", displayDelivery);
+  displayDelivery(deliveryString);
+}
+function displayDelivery(event, string) {
   new Typewriter("#jokeDelivery", {
-    strings: response.data.delivery,
+    strings: `${string}😂🤣`,
     autoStart: true,
     cursor: null,
-    pauseFor: 1500,
   });
-
-  //jokeElement.innerHTML = `${jokeSetUp}😃`;
-  //deliveryElement.innerHTML = `${jokeDelivery} 😂🤣`;
 }
 function handleClick(event) {
   let apiUrl = "https://v2.jokeapi.dev/joke/Pun?type=twopart";
@@ -28,5 +26,6 @@ function handleClick(event) {
 let jokeButton = document.getElementById("jokeButton");
 let jokeElement = document.getElementById("joke");
 let jokeDeliveryElement = document.getElementById("jokeDelivery");
+let deliveryButton = document.querySelector("#deliveryButton");
 
 jokeButton.addEventListener("click", handleClick);
