@@ -1,0 +1,31 @@
+.button {
+  background-color: rgb(13, 186, 202);
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  display: block;
+  margin: 20px auto;
+  border: 2px solid rgb(13, 186, 202);
+}
+button:hover {
+  border: 2px solid blueviolet;
+  background-color: white;
+  color: blueviolet;
+}
+.joke {
+  color: rgb(108, 50, 163);
+  font-size: 16px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+.joke-container {
+  background-color: rgb(208, 246, 249);
+  max-width: 450px;
+  min-height: 200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 15px;
+}
