@@ -5,19 +5,23 @@ function fetchingJoke(response) {
     strings: response.data.setup,
     autoStart: true,
     cursor: null,
+    delay: 30,
   });
   deliveryButton.style.visibility = "visible";
-  deliveryButton.addEventListener("click", displayDelivery);
-  displayDelivery(deliveryString);
+  deliveryButton.addEventListener("click", () =>
+    displayDelivery(deliveryString)
+  );
 }
-function displayDelivery(event, string) {
+function displayDelivery(string) {
   new Typewriter("#jokeDelivery", {
     strings: `${string}😂🤣`,
     autoStart: true,
     cursor: null,
+    delay: 30,
   });
 }
 function handleClick(event) {
+  event.preventDefault();
   let apiUrl = "https://v2.jokeapi.dev/joke/Pun?type=twopart";
   jokeElement.innerHTML = "ready??";
   jokeDeliveryElement.innerHTML = "here we go!😃";
